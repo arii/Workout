@@ -1,0 +1,88 @@
+html{
+  background-color: #DCE3E6;
+  }
+
+body {
+  font-family: Garamond, sans-serif;
+  line-height:160%;
+  padding:1%;
+  font-size:100%
+  }
+
+h2, h4, p, li, .text_container, #start_workout{
+  width:80%;
+  margin-left:auto;
+  margin-right:auto;
+  }
+
+h2 {
+  background-color:#C1D2E7;
+  border-radius: 0.5em 0.5em 0.5em 0.5em;
+  padding: 1.3em 1em 1.3em 1em;
+  line-height:1.3em;
+  }
+
+h2, h4 {
+   color: #0C3D5F;
+}
+
+.text_container{
+  padding:1%;
+  box-shadow: 0 0.3em 1em #000000;
+  background-color: #FFFFFF;
+}
+.controls{
+  width:70%;
+  height:10em;
+  }
+.side{
+  display:inline;
+  width:33%
+  }
+#start_workout{
+  text-align:center;
+  width:20em;
+  box-shadow: 0 0.3em 1em #0C3D5F;
+  border-radius: 0.5em 0.5em 0.5em 0.5em;
+  border-color: #0C3D5F;
+  }
+#start_workout:hover{
+  cursor:pointer
+  }
+
+#workout_container{
+  margin-left:auto;
+  margin-right:auto;
+  background-color:white;
+  padding:1%;
+  box-shadow: 0 0.3em 1em black;
+  width: 80%
+  }
+#workout_image{
+  width: 100%;
+  max-height:40em;
+  background-color:#C1D2E7;
+  font-size:100px;
+  text-align:center;
+  }
+#workout_timer{
+  margin-left:auto;
+  margin-right:auto;
+  width: 75%;
+  max-height:15em;
+  background-color:white;
+  padding: 10px;
+  border:10px solid;
+  border-color:#0C3D5F;
+  border-radius: 0.5em 0.5em 0.5em 0.5em;
+  font: bold "Courier New";
+  font-size:200px;
+  text-align:center;
+  }
+
+.active{
+  color:red;
+  }
+.rest{
+  color:green;
+  }
