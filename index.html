@@ -27,7 +27,7 @@ THE SOFTWARE.
 -->
 <head>
   <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
-  <title> 7 Minute Workout </title>
+  <title> Interval Workouts </title>
   <link type="text/css" href="index.css" rel="stylesheet" />
   <script type="text/javascript" src="javascript/jquery-1.10.1.min.js"> </script>
   <script type="text/javascript" src="javascript/jquery-ui.js"> </script>
@@ -38,55 +38,30 @@ THE SOFTWARE.
 
 </head>
 <body>
-  <div class="text_container"> 
-    <h2> Seven Minute Workout </h2>
-    <h4> HIGH-INTENSITY CIRCUIT TRAINING USING BODY WEIGHT:
-         Maximum Results With Minimal Investment </h4>
-
-    <div id="start_workout">
-       <h4>Start the Workout </h4>
-    </div>
-
-    <br>
-          
-    <p>  <a href="http://journals.lww.com/acsm-healthfitness/Fulltext/2013/05000/HIGH_INTENSITY_CIRCUIT_TRAINING_USING_BODY_WEIGHT_.5.aspx">
-         Excersizes were designed by Brett Kilka and Chris Jordan </a></p>
-         <p>Website designed by <a href ="people.csail.mit.edu/aanders">Ariel Anders </a>.  </p>
-         
-         <p>All code is released under the MIT license.  <a href="https://github.com/arii/Workout/">Work on it with me! </a></p>
+  <div id="main_frame" class="square"> main_frame
+  
+  <div id="top_frame" class="square">top_frame
+  
+    <div id="top_header" >
     
-    <p>
-    Please <a href="mailto:aanders@mit.edu">contact me</a> with any questions, comments, critics, or advice for the website.  Thanks! 
-    </p>
+      <div id="countdown" class="square">countdown
+      </div><!-- end countdown -->
+      
+      <div id="exercise_name">exercise_name
+      </div><!-- end exercise_name -->
+      
+    </div> <!-- end top_header-->
     
-  </div>
+    <div id="exercise_graphic">exercise_graphic
+    </div><!-- end exercise_graphic -->  
+  
+  </div><!-- end top_frame -->
+  
+  <div id="bottom_frame">bottom_frame
+  </div><!-- end bottom_frame -->
 
-  <div id="workout_container">
-    <table width="100%">
-      <tr>
-        <td width="75%"> <table width="100%">
-              <tr><td> <div id="workout_image" class="active"></div></td></tr>
-              <tr><td> <div id="workout_timer" class="active">30</div></td></tr>
-            </table>
-        </td>
-        <td width="25%">
-           <div id="workout_controls">
-            <button id="play" class="controls">start</button>
-            <div id="navigation">
-              <button id="forward" class="side controls">next</button>
-              <button id="back" class="side controls">back</button>
-            </div>
-           </div>   
-           <button id="restart" class="controls">restart excersize</button>
-        </td>
-      </tr>
-      <tr><td>
-      <h4 id="total_time"> </h4> <button id="reset">reset</button>
-      </tr></td>
-    </table>
-  </div>
-
-
+  </div><!-- end main_frame -->
+ 
 </body>
 </html>
 
