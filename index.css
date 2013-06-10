@@ -12,6 +12,13 @@ div {
   padding-bottom: 90%;
   }
   
+#transparent_overlay{
+  position:absolute;
+  border: 1px solid red;
+  margin-left:2%;
+  top:0;
+  background-color:rgba(255,255,255,0.9);
+  }
 #top_header{
   width:90%;
   height:0;
@@ -36,6 +43,14 @@ div {
   width:90%;
   height:0;
   padding-bottom:60%;
+  }
+#total_time{
+  width:20%;
+  padding-bottom:7%;
+  height:0;
+  position:absolute;
+  bottom:0;
+  right:0;
   }
 #bottom_frame{
   width:96%;
