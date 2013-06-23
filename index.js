@@ -24,23 +24,47 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
+  //This script extracts parameters from the URL
+  //from jquery-howto.blogspot.com
+  
+      $.extend({
+        getUrlVars : function() {
+            var vars = [], hash;
+            var hashes = window.location.href.slice(
+                    window.location.href.indexOf('?') + 1).split('&');
+            for ( var i = 0; i < hashes.length; i++) {
+                hash = hashes[i].split('=');
+                vars.push(hash[0]);
+                vars[hash[0]] = hash[1];
+            }
+            return vars;
+        },
+        getUrlVar : function(name) {
+            return $.getUrlVars()[name];
+        }
+    });
+
 
 $(function() {
-var DEBUG  = false;
 
-// constants
 var WORKOUT_TIME, BREAK_TIME, EXERCISES;
-if(DEBUG){
-  WORKOUT_TIME = 2;
-  BREAK_TIME = 1;
+// determine exercise program
+program = $.getUrlVar('program');
+if(program == 'debug'){
+  WORKOUT_TIME = 5;
+  BREAK_TIME = 2;
   EXERCISES = ["Jumping Jacks", "Wall sit", "Push Up"];
+}else if (program == 'booty'){
+  // STOMACH, LOWER BODY WORKOUT
+  BREAK_TIME = 10;  
+  WORKOUT_TIME = 30;
+  EXERCISES = ["Jumping Jacks", "Wall sit", "wall climb", "Abdominal Crunch", "leg lifts", "Squats", "ab twists", "Plank", "High Knees", "Lunges", "butt lifts", "Side Planks"];
 }else{
   WORKOUT_TIME = 30;
   BREAK_TIME = 10;
   EXERCISES = ["Jumping Jacks", "Wall sit", "Push Up", "Abdominal Crunch", "Step-up onto Chair", "Squats", "Triceps dip on chair", "Plank", "High Knees", "Lunges", "Push-up and Rotation", "Side Planks"];
 }
 
-  $("#bottom_frame").hide();
   var State = {
               START:0,
               ACTIVE:1,
@@ -56,6 +80,8 @@ if(DEBUG){
   var exercise_ptr = 0;
   var pause_active = false; 
   
+  $("#bottom_frame").hide();
+  $("#next_exercise").hide();
    
   function update(){
     switch(state){
@@ -86,8 +112,8 @@ if(DEBUG){
           
       break;
       case(State.PAUSED):
-          console.log("paused");
-        
+          console.log("paused, exercise pointer is " + exercise_ptr);
+          break;
       default:
         console.log("default case" + state);
         break;
@@ -98,6 +124,7 @@ if(DEBUG){
   $("#main_frame").click(function(){
     pause_active = (state == State.ACTIVE);
     state = State.PAUSED;
+    console.log("state is  : " + state);
     $("#transparent_overlay").show().text("Paused.  Click to Resume");
     
     });
@@ -119,6 +146,7 @@ if(DEBUG){
           console.log("return to rest state");
           state = State.REST;
           }
+      break;
       case(State.COMPLETE):
         state = State.ACTIVE;
         exercise_ptr = 0;
@@ -139,12 +167,18 @@ if(DEBUG){
     workout_time =WORKOUT_TIME;
     $("#countdown").text(""+workout_time);
     $("#exercise_name").text(EXERCISES[exercise_ptr]);
+    $("#next_exercise").hide();
     //$("#exercise_graphic").text(EXERCISES[exercise_ptr] + " graphic" );
   }
   
   function start_rest(){
     $("#exercise_name").text("Rest");
    // $("#exercise_graphic").text("Rest graphic");
+   if(exercise_ptr == EXERCISES.length -1)
+    next_exercise_str = "You're done!"
+   else 
+   next_exercise_str = "Next Exercise: " + EXERCISES[exercise_ptr + 1];
+   $("#next_exercise").show().text(next_exercise_str);
   
   }
   function getTimeString(date){
@@ -162,6 +196,9 @@ if(DEBUG){
     $("#total_time").text(total_str);
     
   }
+  
+
+
 
 });
 

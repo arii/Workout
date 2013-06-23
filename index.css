@@ -1,3 +1,6 @@
+body{
+  font-size:200%;
+  }
 div {
   border: 1px solid black;
   padding:2%;
@@ -43,6 +46,13 @@ div {
   width:90%;
   height:0;
   padding-bottom:60%;
+  }
+#next_exercise{
+  width:60%;
+  padding-bottom:40%;
+  position:absolute;
+  top:15%;
+  left:15%;
   }
 #total_time{
   width:20%;
