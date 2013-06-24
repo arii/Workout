@@ -1,51 +1,86 @@
+
+ root {
+    grey: rgb(231,235,238);
+    blueish: rgb(108,113,151);
+    green rgb(115,146,17);
+    gold: rgb(234,193,36);
+    red: rgb(217,36,5);
+    blue: rgb(53,99,235); 
+    var-off-black: rgb(8,3,0);
+    }
+
+
 body{
-  font-size:200%;
+  font-size:150%;
+  font-family:Verdana, sans-serif;
+  /*background: linear-gradient(to bottom,  #a90329 0%,#8f0222 59%,#6d0019 100%);*/
+   background-color: rgb(234,193,36)
+   text-align:center; 
   }
+  
 div {
-  border: 1px solid black;
+
+  /*border: 1px solid black;*/
   padding:2%;
   position:relative;
   margin-left:auto;
   margin-right:auto;
+  height:0;
+  text-align:center; 
+  vertical-align: middle;
     }
-  
+#main_frame{
+  background-color:black;
+  box-shadow: 0 0.3em 1em #000000;
+  }
 .square {
   width: 90%;
-  height: 0;
   padding-bottom: 90%;
+  }
+#top_frame{
+/*  background-color:rgb(8,3,0);
+ */
   }
   
 #transparent_overlay{
+  color:rgb(217,36,5);
   position:absolute;
-  border: 1px solid red;
   margin-left:2%;
   top:0;
-  background-color:rgba(255,255,255,0.9);
+  background-color:rgba(231,235,238,0.9);
+  box-shadow: 0 0.3em 1em #000000;
   }
 #top_header{
   width:90%;
-  height:0;
   padding-bottom:25%;
+  background: linear-gradient(to bottom,  #a90329 0%,#8f0222 59%,#6d0019 100%);
+  color:white;
+  border-bottom:0.3em solid black;
   }
   
 #countdown{
   width:20%;
-  height:0;
   padding-bottom:20%;
   float:left;
-  display:inline;
+  border-radius: 0.5em 0.5em 0.5em 0.5em;
+  border:2px solid white;
+  background-color:rgb(115,146,17);
+  font-family:"Courier New", Courier, monospace;
+  vertical-align: middle;
+  line-height:200%;
+
   }
 #exercise_name{
   width:70%;
-  height:0;
   padding-bottom:20%;
   float:right;
   display:inline;
   }
 #exercise_graphic{
   width:90%;
-  height:0;
   padding-bottom:60%;
+  background-color:rgb(53,99,235); 
+  background: linear-gradient(to bottom,  #a90329 0%,#8f0222 59%,#6d0019 100%);
   }
 #next_exercise{
   width:60%;
@@ -53,20 +88,22 @@ div {
   position:absolute;
   top:15%;
   left:15%;
+  background-color:rgb(108,113,151);
+  box-shadow: 0 0.3em 1em #000000;
   }
 #total_time{
   width:20%;
   padding-bottom:7%;
-  height:0;
   position:absolute;
   bottom:0;
   right:0;
   }
 #bottom_frame{
   width:96%;
-  height:0%;
   padding-bottom:20%;
   position:absolute;
   bottom:0;  
   left:0;
   }
+  
+  
